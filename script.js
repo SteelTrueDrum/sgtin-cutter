@@ -20,7 +20,11 @@ const swap = () => {
 }
 
 const cut = () => {
-  resultArea.value = inputSGTIN.value.slice(2, 16) + inputSGTIN.value.slice(18,31)
+  if (inputSGTIN.value[0] != '\\') {
+    resultArea.value = inputSGTIN.value.slice(2, 16) + inputSGTIN.value.slice(18,31)
+  } else {
+    resultArea.value = inputSGTIN.value.slice(3, 17) + inputSGTIN.value.slice(19,32)
+  }
 }
 
 //Listeners
