@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  height: 80px;
+}
+
+.form {
+  width: 750px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.input-sgtin {
+  width: 700px;
+}
+
+label {
+  display: inline-block;
+  width: 120px;
+}
+
+.btn {
+  cursor: pointer;
+  width: 70px;
+  height: 30px;
+  margin: 20px;
+
+}
+
+.result-area {
+  width: 700px;
+}
+
+/* .status-bar {
+  border: 1px solid blue;
+  height: 100px;
+} */
+
+.footer {
+  margin-top: 20px;
+  height: 100px;
+  text-align: center;
+}
