@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="scissors.png">
-  <title>SGTIN Cutter v.1.1a</title>
+  <title>SGTIN Cutter v.1.2a</title>
 </head>
 <body>
   <header class="header">
     <img src="logo.png" alt="Pharma logo" class="logo">
     <h1 class="title">SGTIN Cutter</h1>
-    <h2 class="subtitle">КИЗорез v.1.1a</h2>
+    <h2 class="subtitle">КИЗорез v.1.2a</h2>
   </header>
   <main class="main">
     <form class="form">
@@ -21,10 +21,22 @@
         <input type="text" id="sgtin-input" class="input-sgtin input" required>
         <button type="button" class="swap-button btn btn-fresh">Ru -> En</button>
         <button type="button" class="cut-button btn btn-fresh">Порезать</button>
+        <button type="button" class="water-button btn btn-fresh">Код для воды</button>
         <button type="reset" class="reset-button btn btn-hot">Сброс</button>
         <br>
         <label for="result-area" class="label">Результат:</label>
         <input type="text" id="result-area" class="result-area input">
+        <div style='text-align: center;'>
+          <!-- insert your custom barcode setting your data in the GET parameter "data" -->
+          <img class="water-barcode-image" alt='Barcode'
+              src='https://barcode.tec-it.com/barcode.ashx?data=0104607012274953215QlKsVvAF-x%3d-935pJ0&code=DataMatrix&translate-esc=on'/>
+        </div>
+        <div style='padding-top:8px; text-align:center; font-size:15px; font-family: Source Sans Pro, Arial, sans-serif;'>
+          <!-- back-linking to www.tec-it.com is required -->
+          <a href='https://www.tec-it.com' title='Barcode Software by TEC-IT' target='_blank'>
+            TEC-IT Barcode Generator<br/>
+          </a>
+        </div>
       </fieldset>
     </form>
     <div class="status-bar">

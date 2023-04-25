@@ -6,7 +6,12 @@ const RU = 'ё1234567890-=йцукенгшщзхъфывапролджэ\\ячс
 const inputSGTIN = document.querySelector('.input-sgtin');
 const swapButton = document.querySelector('.swap-button')
 const cutButton = document.querySelector('.cut-button');
+const waterButton = document.querySelector('.water-button');
 const resultArea = document.querySelector('.result-area');
+const waterBarcodeImg = document.querySelector('.water-barcode-image')
+const waterBarcodeSrcPrefix = 'https://barcode.tec-it.com/barcode.ashx?data=';
+const waterBarcodeSrcSuffix = '&code=GS1DataMatrix&translate-esc=true&dataattributekey_2=&dataattributeval_2=&dataattributekey_3=&dataattributeval_3=&dataattributekey_4=&dataattributeval_4=&dataattributekey_5=&dataattributeval_5=&digitallink=&dmsize=Default&eclevel=L'
+let waterBarcode = '';
 
 //Functions
 const swap = () => {
@@ -27,6 +32,16 @@ const cut = () => {
   }
 }
 
+const makeWaterBarcode = () => {
+  waterBarcode = inputSGTIN.value;
+  if (waterBarcode.length < 20) {
+    waterBarcodeImg.src = waterBarcodeSrcPrefix + '010' + waterBarcode + '215PPRePSb0NHBJ93yNER' + waterBarcodeSrcSuffix;
+  } else {
+    waterBarcodeImg.src = waterBarcodeSrcPrefix + waterBarcode + waterBarcodeSrcSuffix;
+  }
+}
+
 //Listeners
 cutButton.addEventListener('click', cut);
 swapButton.addEventListener('click', swap);
+waterButton.addEventListener('click', makeWaterBarcode);
